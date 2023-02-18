@@ -13,7 +13,7 @@ services:
     working_dir: /app
     volumes:
       - db_data:/var/lib/postgresql/data/pgdata
-      - ./migrations/entrypoint/01-roles.sql:/docker-entrypoint-initdb.d/01-roles.sql
+      - ./migrations/entrypoint.sql:/docker-entrypoint-initdb.d/20-entrypoint.sql
     restart: always
     ports:
       - 127.0.0.1:4021:5432
