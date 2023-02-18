@@ -19,9 +19,8 @@
     "migrate": "yarn db-migrate",
     "save": "mkdir -p tmp; cp tmp/backup.tar.gz tmp/$(date '+%Y-%m-%d_%H:%M').tar.gz; docker save $(docker image ls -q) | gzip > tmp/backup.tar.gz",
     "load": "docker load < tmp/backup.tar.gz",
-    "backup": "",
-    "restore": "",
-    "dcd": "docker compose --profile dev"
+    "dcd": "docker compose --profile dev",
+    "dev": "yarn up"
   },
   "comments": {
     "scripts": {
@@ -93,5 +92,8 @@
     ],
     "delay": 2500,
     "watch": "./src/**/*"
+  },
+  "devDependencies": {
+    "pm2": "^5.2.2"
   }
 }
